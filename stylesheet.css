@@ -1,0 +1,194 @@
+*, *::before, *::after {box-sizing: inherit;}
+
+html {
+    box-sizing: border-box;
+}
+
+:root {
+--Very-Dark-Magenta: hsl(300, 43%, 22%);
+--Soft-Pink: hsl(333, 80%, 67%);
+--Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+--Light-Grayish-Magenta: hsl(300, 24%, 96%);
+--White: hsl(0, 0%, 100%);
+font-family: 'League Spartan', sans-serif;
+font-size: 15px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.main-title {
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.main-para {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    color: var(--Dark-Grayish-Magenta);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+.single-rating-one, .single-rating-two, .single-rating-three {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Magenta);
+    background-color: var(--Light-Grayish-Magenta);
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+}
+
+.single-rating-one > p, .single-rating-two > p, .single-rating-three > p  {
+    margin: 0.5rem;
+}
+
+.single-rating-one > img, .single-rating-two > img, .single-rating-three > img {
+    margin: 0.2rem;
+}
+
+.card {
+    background-color: var(--Very-Dark-Magenta);
+    color:var(--White);
+    padding: 1.7rem;
+    border-radius: 0.6rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.card-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex > img {
+    height: 3rem;
+    border-radius: 100%;
+    margin-right: 1.2rem;
+}
+
+.text > h2 {
+    font-weight: 500;
+    margin: 0.1rem;
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+    place-items: center;
+}
+
+.pink-text {
+    font-weight: 400;
+    color: var(--Soft-Pink)
+}
+
+  .card > p {
+      line-height: 1.5rem;
+      font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-areas: 
+        'main-text ratings'
+        'card-group card-group';
+        max-width: 80%;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-text {
+        grid-area: main-text;
+        max-width: 80%;
+    }
+
+    .ratings {
+        grid-area: ratings;
+    }
+  
+    .card-group {
+        grid-area: card-group;
+        flex-direction: row;
+    }
+
+    .main-title {
+        text-align: left;
+        max-width: 13ch;
+    }
+    
+    .single-rating-one, .single-rating-two, .single-rating-three {
+        width: 35ch;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .single-rating-one > p, .single-rating-two > p, .single-rating-three > p {
+        display: inline-block;
+        margin-left: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .single-rating-one > img, .single-rating-two > img, .single-rating-three > img {
+        display: inline-block;
+        margin-right: 0.3rem;
+        padding: 0;
+        height: 1rem;
+    }
+
+    .main-para {
+        text-align: left;
+        max-width: 46ch;
+    }
+
+    .single-rating-one {transform: translateX(0)}
+    .single-rating-two {transform: translateX(3rem)}
+    .single-rating-three {transform: translateX(5rem)}
+
+    .card {
+        max-width: 30%;
+        margin-left: 2%;
+        max-height: 240px;
+    }
+
+    .card:nth-child(1) {
+        margin-left: 0px;
+    }
+
+    .card:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    .card:nth-child(3) {
+        margin-top: 45px;
+    }
+}
+
+.attribution {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'League Spartan', sans-serif;
+    color: var(--Very-Dark-Magenta);
+    margin-top: 40px
+}
+
+.attribution a {
+    color: var(--Soft-Pink);
+    text-decoration: none;
+}
+
+.attribution a:nth-child(1) {
+    margin-right: 20px;
+}
